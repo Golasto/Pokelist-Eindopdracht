@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from "axios";
+import {AuthContext} from "../context/authProvider";
 
 export const RegisterForm = (props) => {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const [name, setName] = useState("");
 
-    const handleSubmit = (e) => {
+    const value = useContext(AuthContext)
+
+    const handleSubmit = async (e) => {
+        const data = {
+            email: email,
+            password: pass,
+            username: name,
+        }
         e.preventDefault();
-        console.log("name: " + name)
-        console.log("email: " + email)
-        console.log("password: " + pass)
+        try {
+            const response = await axios.post("http://localhost:3000/register", data)
+            value.login()
+            props.onFormSwitch('logout')
+        } catch (e){
+            console.log(e.response)
+            alert(e.response.data)
+        }
+
     }
 
     return (

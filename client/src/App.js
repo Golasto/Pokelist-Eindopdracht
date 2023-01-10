@@ -9,6 +9,7 @@ import Search from "./pages/search";
 import Favorite from "./pages/favorite";
 import {ListDownload} from "./pages/list-download";
 import { LoginForm } from './components/loginForm'
+import { Logoutform } from "./components/logoutform";
 import { RegisterForm } from "./components/registerForm";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import PokemonDetails from "./pages/pokemondetails";
@@ -20,15 +21,6 @@ const [currentForm, setCurrentForm] = useState("login");
 const [backendData, setBackendData] = useState([{}])
     const [authData, setAuthData] = useState()
 
-    useEffect(() => {
-        fetch(AUTH_API + "/api/test/all").then(
-            response => response.json()
-        ).then(
-            data => {
-                setBackendData(data)
-            }
-        )
-    }, [])
 
 const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -48,7 +40,9 @@ const toggleForm = (formName) => {
           </Router>
           <div className="auth">
               {
-                  currentForm === "login" ? <LoginForm onFormSwitch={toggleForm}/> : <RegisterForm onFormSwitch={toggleForm}/>
+                  currentForm === "login" ? <LoginForm onFormSwitch={toggleForm}/> :
+                  currentForm === "logout" ? <Logoutform onFormSwitch={toggleForm}/> :
+                      <RegisterForm onFormSwitch={toggleForm}/>
               }
       </div>
       </>

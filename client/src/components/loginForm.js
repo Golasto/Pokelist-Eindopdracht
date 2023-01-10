@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from "axios";
+import {AuthContext} from "../context/authProvider";
 
 export const LoginForm = (props) => {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
 
-    const handleSubmit = (e) => {
+    const value = useContext(AuthContext)
+
+    const handleSubmit = async (e) => {
+
+    const data = {
+        email: email,
+        password: pass,
+    }
     e.preventDefault();
-    console.log(email)
+        try {
+            const response = await axios.post("http://localhost:3000/login", data)
+            value.login()
+            localStorage.setItem("key", response.data.accessToken)
+            props.onFormSwitch('logout')
+        } catch (e) {
+            console.error(e.response)
+            alert(e.response.data)
+        }
     }
     return (
         <>

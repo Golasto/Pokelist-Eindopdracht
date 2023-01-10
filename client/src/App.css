@@ -3,6 +3,7 @@ body{
 }
 .auth{
     display: flex;
+    position: fixed;
     align-items: flex-end;
     flex-direction: column;
 }
