@@ -30,9 +30,9 @@ export const LoginForm = (props) => {
             <div className="login-container">
                 <h1>Login</h1>
         <form onSubmit={handleSubmit} className="login">
-            <label form="email">email</label>
+            <label form="email">Email</label>
             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email"/>
-            <label form="password">password</label>
+            <label form="password">Password</label>
             <input value={pass}  onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password"/>
             <button className="form-button" type="submit">Log in</button>
         </form>

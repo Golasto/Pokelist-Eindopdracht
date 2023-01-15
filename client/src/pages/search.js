@@ -45,11 +45,13 @@ const Search = () => {
     } if (isLoaded) {
         return (
             <>
-                <div>
-                    <input id="searchbar" type="text" onInput={() => getNames()}></input>
+                <div className='favorite-list'>
+                    <div className='searchContainer'>
+                    <input id="searchbar" type="text" placeholder='  Type hier je Pokemon...' onInput={() => getNames()}></input>
+                    </div>
                     {pokemonNames.map((p, index) =>
                         <li id={index} key={index} className="pokemons">
-                            <Link to={`../pokemondetails/${p.name}`}>{p.name}</Link>
+                            <Link to={`../pokemondetails/${p.name}`} className='pokeNames'>{p.name}</Link>
                         </li>
                     )}
                 </div>

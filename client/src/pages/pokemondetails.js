@@ -157,15 +157,17 @@ export default function PokemonDetails() {
     } if (isLoaded) {
         return (
             <>
-                <div id="details">
-                    <h1>{details.forms[0].name}</h1>
-                    <img
+                <div className='details-pagina'>
+                <div id="pokemon-Details">
+                    <img className='pokemonImg'
                         src={details.sprites.other['official-artwork'].front_default} alt="" />
+                    <h1 className='pokemonName'>{details.forms[0].name}</h1>
                 </div>
-                <div>
-                    <button onClick={() => getEvolutions(true)} id="nEvo">Previous Evolution</button>
-                    <button onClick={() => getEvolutions(false)} id="pEvo">Next Evolution</button>
-                    <button onClick={() => setFav("FavPokemon", getId())}>Favourite</button>
+                <div className='button-container'>
+                    <button onClick={() => setFav("FavPokemon", getId())} className='fav-Button'>Favourite</button>
+                    <button onClick={() => getEvolutions(false)} id="pEvo" className='nex-Evo'>Next Evolution</button>
+                    <button onClick={() => getEvolutions(true)} id="nEvo" className='pre-Evo'>Previous Evolution</button>
+                </div>
                 </div>
             </>
         )

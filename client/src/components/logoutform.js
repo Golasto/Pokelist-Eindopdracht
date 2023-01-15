@@ -5,7 +5,8 @@ export const Logoutform = (props) => {
     const data = useContext(AuthContext)
     return (
         <>
-                <button className="form-button" onClick={() => {props.onFormSwitch('login'); data.logout() }}>Loguit!</button>
+                <button className="logout-button" onClick={() => {props.onFormSwitch('login'); data.logout() }}>Logout!</button>
+
         </>
     )
 }

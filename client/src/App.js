@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './App.css';
 import '../src/components/navbar.css'
 import './pages/favorite.css'
 import './pages/list-download.css'
+import './pages/search.css'
+import './pages/home.css'
+import './pages/pokemondetails.css'
 import Nav from "../src/components/navbar"
 import { Home } from "./pages/home";
 import Search from "./pages/search";
@@ -18,9 +21,6 @@ const AUTH_API = "https://frontend-educational-backend.herokuapp.com/"
 
 function App() {
 const [currentForm, setCurrentForm] = useState("login");
-const [backendData, setBackendData] = useState([{}])
-    const [authData, setAuthData] = useState()
-
 
 const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -30,6 +30,12 @@ const toggleForm = (formName) => {
       <>
           <Router>
               <Nav isAuthenticated={ isAuthenticated} toggleIsAuthenticated={ toggleIsAuthenticated}></Nav>
+              <div className="auth">{
+                  currentForm === "login" ? <LoginForm onFormSwitch={toggleForm}/> :
+                      currentForm === "logout" ? <Logoutform onFormSwitch={toggleForm}/> :
+                          <RegisterForm onFormSwitch={toggleForm}/>
+              }
+          </div>
               <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/search" element={<Search />} />
@@ -38,13 +44,7 @@ const toggleForm = (formName) => {
                   <Route path="/pokemondetails/:name" element={<PokemonDetails />} />
               </Routes>
           </Router>
-          <div className="auth">
-              {
-                  currentForm === "login" ? <LoginForm onFormSwitch={toggleForm}/> :
-                  currentForm === "logout" ? <Logoutform onFormSwitch={toggleForm}/> :
-                      <RegisterForm onFormSwitch={toggleForm}/>
-              }
-      </div>
+
       </>
   );
 }

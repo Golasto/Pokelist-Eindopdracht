@@ -49,23 +49,22 @@ export function ListDownload() {
         <>
             <div className='options'>
         <div className='downloadCard'>
-            <p>Klaar met je lijst? Download hem Hier!</p>
-            <button onClick={() => downloadFile()}>Download</button>
+            <p className='download-tekst'>
+                <span>Klaar met je lijst?</span> <span>Download hem Hier!</span></p>
+            <button onClick={() => downloadFile()} className='download-button'>Download</button>
         </div>
             <div className="uploadCard">
-                <p>Of upload hier een nieuwe lijst!</p>
-                <form>
-                    <input
+                <p className='upload-tekst'><span>Of upload hier</span> <span>een nieuwe lijst!</span></p>
+                <form className='uploadCard-buttons'>
+                    <input className='upload-button'
                         type={"file"}
                         id={"csvFileInput"}
                         accept={".csv"}
                         onChange={handleOnChange}
                     />
-                    <button
-                        onClick={(e) => {
-                            handleOnSubmit(e);
-                        }}
-                    ></button>
+                    <button className='submit-button'
+                        onClick={(e) => { handleOnSubmit(e); }}>Submit
+                    </button>
                 </form>
 
             </div>

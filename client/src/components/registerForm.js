@@ -32,11 +32,11 @@ export const RegisterForm = (props) => {
             <div className="register-container">
                 <h1>Register</h1>
         <form onSubmit={handleSubmit} className="register">
-            <label form="name">name</label>
+            <label form="name">Name</label>
             <input value={name} onChange={(e) => setName(e.target.value)} name="name" id="name" placeholder="name"/>
-            <label form="email">email</label>
+            <label form="email">Email</label>
             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email"/>
-            <label form="password">password</label>
+            <label form="password">Password</label>
             <input value={pass}  onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password"/>
             <button className="form-button" type="submit">Register</button>
         </form>

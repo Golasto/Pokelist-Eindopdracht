@@ -10,7 +10,6 @@ function Favorite() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     function getFav() {
-        console.log("test")
         let tempArr = [];
         if (getCookie("FavPokemon") !== "") {
             if (getCookie("FavPokemon").indexOf(",") < 0) {
@@ -71,7 +70,7 @@ function Favorite() {
                 <div>
                     {favPokemons.map((p, index) =>
                         <li id={index} key={index} className="pokemons">
-                            <Link to={`../pokemondetails/${p.name}`}>{p.name}</Link>
+                            <Link to={`../pokemondetails/${p.name}`} className='pokeNames'>{p.name}</Link>
                         </li>
                     )}
                 </div>
