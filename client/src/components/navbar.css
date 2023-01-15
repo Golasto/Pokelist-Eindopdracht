@@ -14,6 +14,7 @@
      font-size: 36px;
      color: black;
      transition: all 0.2s ease-in-out;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
  .navlist{
      transition: all 0.2s ease-in-out;
@@ -25,6 +26,8 @@
      margin-top: 30px;
      margin-left: 50px;
      margin-right: 50px;
+     padding-bottom: 23px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
  .navlist:hover {
      transition: .6s;
@@ -35,4 +38,11 @@
      background-color: #FF0000;
      border-color: white;
      transition: .3s;
+
+ }
+ .navbutton:active,
+ .navbutton:focus{
+     background-color: #737373;
+     color: white;
+     border-color: white;
  }

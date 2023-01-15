@@ -3,14 +3,24 @@ body{
 }
 .auth{
     display: flex;
-    align-items: flex-end;
+    float: right;
     flex-direction: column;
+    padding-right: 40px;
+    padding-top: 20px;
+    width: 350px;
 }
 .login-container, .register-container, .login, .register{
     display: flex;
     flex-direction: column;
     text-align: left;
+    row-gap: 5px;
     padding: 15px 30px 15px 15px;
+    font-size: 20px;
+}
+#email,
+#password,
+#name{
+    padding: 10px;
 }
 label{
     text-align: left;
@@ -22,12 +32,29 @@ label{
     padding: 10px;
     margin: 5px;
 
+
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: all 0.2s ease-in-out;
 }
+.logout-button{
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px 15px 15px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.2s ease-in-out;
+    width: 25%;
+}
+.logout-button:hover{
+    color: white;
+    background-color: #737373;
+
+    transition: .3s;
+    transform:scale(1.1);
+}
 .form-button:hover{
-    color: #b90d0d;
-    background-color: #ababde;
+    color: white;
+    background-color: #737373;
 
     transition: .3s;
     transform:scale(1.1);
