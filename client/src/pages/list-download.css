@@ -1,83 +1,19 @@
 .options{
     display: flex;
     justify-content: space-evenly;
+    align-items: flex-end;
     padding-top: 40px;
 }
 
 .downloadCard{
-    display: flex;
-    row-gap: 20px;
-    flex-direction: column;
     background-color: #3A3A3A;
-    padding: 100px 120px;
+    padding: 120px 120px;
     border: 5px solid black;
     border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.download-tekst span{
-    font-size: 36px;
-    display: block;
-    text-align: center;
-    color: white;
-}
-.download-button{
-    font-size: 32px;
-    padding: 10px;
-    margin-right: 40px;
-    margin-left: 40px;
-    border: 3px solid black;
-    background-color: #DCDCDC;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: all 0.2s ease-in-out;
-}
-.download-button:hover{
-    background-color: #737373;
-    color: white;
-    transition: .3s;
-    transform:scale(1.1);
-    border: 3px solid white;
 }
 .uploadCard{
     background-color: #B5B5B5;
     padding: 120px 130px;
     border: 5px solid black;
     border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.upload-tekst span{
-    display: block;
-    font-size: 36px;
-    text-align: center;
-}
-.uploadCard-buttons{
-display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 20px;
-}
-input::file-selector-button{
-    background-color: #B4B4B4;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-input::file-selector-button:focus,
-input::file-selector-button:active{
-    background-color: #3A3A3A;
-}
-input::file-selector-button:hover{
-    background-color: #DCDCDC;
-}
-
-.submit-button{
-    background-color: #5BFF22;
-    padding: 10px 35px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: all 0.2s ease-in-out;
-}
-.submit-button:hover{
-    background-color: #737373;
-    color: white;
-    border-color: white;
-    transition: .3s;
-    transform: scale(1.1);
 }
