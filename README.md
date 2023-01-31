@@ -1,72 +1,92 @@
+
 # Pokelist
+## inhoudsopgave:
+- Beschrijving
+- List-Download Pagina(screenshot)
+- Benodigheden
+- Instalatie
+- Accounts
 
-## Door: Matteus Castillo
+## beschrijving
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Met deze Pokémon-applicatie kun je je favoriete Pokémon toevoegen aan een 
+verzamelingslijst. Deze lijst kun je downloaden en opslaan op je computer, zodat 
+je deze later weer kunt uploaden om je verzameling te updaten. Zo hoef je nooit
+meer bang te zijn om je verzameling kwijt te raken of een Pokémon
+te vergeten toe te voegen.
 
-## Available Scripts
 
-In the project directory, you can run:
+## List-Download Pagina:
 
-### `npm start`
+![Knipsel](https://user-images.githubusercontent.com/113129456/214307838-b61f7a4d-d28f-4935-9976-34b8b89b3541.JPG)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## benodigdheden om de applicatie te kunnen runnen:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ - Internet verbinding
+ - Broncode Editor programma 
+ - Pokemon APi
+ - Backend server
+ - Computer/laptop
+ - React-Router-Dom
+ - Axios
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalatie instructies:
 
-### `npm run build`
+### Terminal
+1. wanneer je de Pokelist project opent begin je eerst om je terminal te openen in jouw
+webstorm. Terminal staat links onder in waar 4 andere knoppen zitten zoals: Git, TODO, etc.
+In de Terminal gaan we onze nodes installeren omdat wij ze nodig hebben om onze 
+functionaliteiten te laten werken.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### NPM
+2. Als je de terminal opent, krijg je een tekst veld waar je allerlij commando's kan
+invoeren. Maar voor deze instructies gaan we alleen 1 belangrijke commando gebruiken.
+Als je van plan bent om de project local te runnen, lees dan verder op stap 3. Type op de
+tekst veld `npm install` om je nodes te installeren. Vervolgens wacht je even totdat die
+klaar is met installeren.
+```json
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3.  Als je de project voorjezelf wilt bekijken in je locale computer, dan raad ik je eerst aan om de volgende stappen hieronder te volgen. Hier ga je nieuwe functies downloaden zodat de site bij het opstarten goed loopt. Als je stap 4 tot 6 helemaal hebt doorgenomen, dan moet je alleen nog maar 1 commando toetevoegen in de Terminal om ervoor te zorgen dat je project opgestart is. Als laats gaan we nu npm start doen zodat we zo genavigeerd worden naar onze locale project.
 
-### `npm run eject`
+```json
+npm start
+```
+------------------------------------------------------------------------------
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### JWT
+4. Als je van plan bent om zelf de project local te runnen, moet je voorjezelf wat andere
+npm commando's runnen zodat die helemaal goed werkt. we gaan eerst de `jwt` installeren via
+onze terminal. net zoals de npm, moeten we bij de jwt npm install jwt-decode gebruiken in
+de Terminal. Deze instalatie zorgt ervoor dat we webtokens kunnen generen voor gebruikers
+die inloggen en regristreren.
+```json
+npm install jwt-decode
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Router
+5. Vervolgens gaan we nu `Routers` installeren om ervoor te zorgen dat onze navigatie van je pagina's
+ werkt. Zonder Routing gaat je navigatiebar helaas niet werken. We doen dit weer bij de 
+ Terminal, en daar typen we in npm install react-router-dom.
+ ```json
+npm install react-router-dom 
+```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Axios
+6. En tot slot, moeten we alleen nog 1 commando instaleren. we gaan als laats Axios instaleren
+via De Terminal. `Axios` is een library die gebruikt wordt in React om gegevens op te halen van
+een externe server. Zonder Axios kan de project helaas geen gegevens ophalen. Net zoals de
+andere commando's doen we een npm install axios.
+ ```json
+npm install axios
+```
+## Accounts:
+Op het moment zijn er nu geen accounts aangemaakt die gebruikt kan worden. Als je
+een nieuwe account aanmaakt door op de Regristeer knop te klikken, kan je verder je
+eigen gegevens invullen en verder komen.

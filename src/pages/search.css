@@ -31,7 +31,7 @@ font-size: 32px;
 .pokeNames{
     color: black;
     text-decoration: none;
-    padding-left: 30px;
+    padding-left: 40px;
     transition: all 0.2s ease-in-out;
     font-size: 36px;
     text-transform: capitalize;
