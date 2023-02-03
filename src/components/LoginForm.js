@@ -1,22 +1,29 @@
-import React, { useState, useContext } from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import axios from "axios";
-import {AuthContext} from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 export const LoginForm = (props) => {
 
     const [ name, setName ] = useState( "" )
     const [ password, setPassword ] = useState( "" )
 
-    const { login } = useContext( AuthContext )
+    const data = useContext( AuthContext )
+
+    useEffect(() => {
+        if (data.isAuth.isAuth) {
+            props.onFormSwitch('logout');
+        }
+    })
 
     async function handleLogin(e) {
         e.preventDefault()
         try {
-            const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin',{
-                name: name,
-                password: password,
-            })
-            login( response.data.accessToken )
+            const response = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
+                "username": name,
+                "password": password,
+        })
+            data.login( response.data.accessToken )
+            props.onFormSwitch('logout')
         } catch ( e ) {
             console.error( e )
         }

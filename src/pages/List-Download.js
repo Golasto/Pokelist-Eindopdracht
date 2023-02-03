@@ -1,15 +1,11 @@
 import getCookie from "../scripts/Cookies";
-import {useState, useEffect, useContext} from "react";
-import {useNavigate} from "react-router-dom";
-import {AuthContext} from "../context/AuthContext";
+import { useState } from "react";
 
 export function ListDownload() {
 
     const [file, setFile] = useState()
     const fileReader = new FileReader()
     const {setFileData} = useState([])
-    const navigate = useNavigate()
-    const {isAuth} = useContext(AuthContext)
 
     function setFav(cvalue) {
         const d = new Date();

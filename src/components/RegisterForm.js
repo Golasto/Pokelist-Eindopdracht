@@ -1,14 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
-import {AuthContext} from "../context/AuthContext";
 import {useNavigate} from "react-router-dom";
 
 export const RegisterForm = (props) => {
     const [ email, setEmail ] = useState( "" )
     const [ username, setUsername ] = useState( "" )
     const [ password, setPassword ] = useState( "" )
+    const navigate = useNavigate()
 
-    const { login } = useContext( AuthContext )
 
     async function registerUser(e) {
         e.preventDefault()
@@ -18,8 +17,10 @@ export const RegisterForm = (props) => {
                 email: email,
                 username: username,
                 password: password,
+                role: ['user']
             })
-            login( response.data.accessToken )
+            props.onFormSwitch('login')
+            navigate("/")
         } catch ( e ) {
             console.error( e )
         }

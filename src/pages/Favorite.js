@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import getCookie from "../scripts/Cookies"
-import {Link, useNavigate} from "react-router-dom";
-import {AuthContext} from "../context/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const API_URL = "https://pokeapi.co/api/v2/"
 

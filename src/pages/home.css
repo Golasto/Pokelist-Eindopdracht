@@ -25,3 +25,11 @@
     display: block;
     text-align: center;
 }
+.welkomUser{
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    left: 1300px;
+    bottom: 200px;
+}
