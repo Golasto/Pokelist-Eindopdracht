@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const AuthContext = createContext({} );
 
-function AuthContextProvider( { children } ) {
+function AuthContextProvider( { children }, props ) {
 
     const [auth, setAuth] = useState({
         isAuth: false,
@@ -47,7 +47,7 @@ function AuthContextProvider( { children } ) {
 
     async function fetchUserData(jwt, id, redirect) {
         try {
-            const response = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user${id}`, {
+            const response = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user`, {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${jwt}`,
@@ -66,7 +66,6 @@ function AuthContextProvider( { children } ) {
             if (redirect) {
                 navigate(redirect)
             }
-            console.log(response)
         } catch (e) {
             console.error(e)
             setAuth({
@@ -88,9 +87,7 @@ function AuthContextProvider( { children } ) {
     }
 
     const contextData = {
-        isAuth: auth.isAuth,
-        user: auth.user,
-        status: auth.status,
+        isAuth: auth,
         login: login,
         logout: logout
     }

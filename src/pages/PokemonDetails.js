@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import getCookie from "../scripts/Cookies"
 import { AuthContext } from "../context/AuthContext";

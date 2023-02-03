@@ -47,6 +47,13 @@
 .pre-Evo:hover{
     transition: .3s;
     transform:scale(1.1);
+    background-color: #DCDCDC;
+}
+
+.fav-Button:active,
+.nex-Evo:active,
+.pre-Evo:active{
+    background-color: red;
 }
 
 .fav-Button{

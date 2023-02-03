@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import Nav from '../components/Navbar';
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from "../context/AuthContext";
 
 const API_URL = "https://pokeapi.co/api/v2/"

@@ -9,7 +9,8 @@ export function Home() {
 <div className='home-intro'>
     <h1 className='Pokelist'>PokeList</h1>
 
-    {isAuth ? <p>Welkom {isAuth.username}</p> : <p style={{display: "none"}}></p>}
+    {isAuth.isAuth ? <p className="welkomUser">Welkom {isAuth.user.username}!</p>
+        : <p style={{display: "none"}}></p>}
 
             <div className='allTekst'>
             <p className='intro-tekst'>

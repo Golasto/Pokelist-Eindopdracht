@@ -10,14 +10,12 @@ import Nav from "./components/Navbar"
 import { Home } from "./pages/Home";
 import Search from "./pages/Search";
 import Favorite from "./pages/Favorite";
-import {ListDownload} from "./pages/List-Download";
+import { ListDownload } from "./pages/List-Download";
 import { LoginForm } from './components/LoginForm'
 import { Logoutform } from "./components/LogoutForm";
 import { RegisterForm } from "./components/RegisterForm";
-import { Navigate, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import PokemonDetails from "./pages/PokemonDetails";
-
-const AUTH_API = "https://frontend-educational-backend.herokuapp.com/"
 
 function App() {
 const [currentForm, setCurrentForm] = useState("login");
@@ -25,11 +23,12 @@ const [currentForm, setCurrentForm] = useState("login");
 const toggleForm = (formName) => {
     setCurrentForm(formName);
 }
-    const [isAuthenticated, toggleIsAuthenticated ] = useState(false);
+const [isAuthenticated, toggleIsAuthenticated ] = useState(false);
+
   return (
       <>
-              <Nav isAuthenticated={ isAuthenticated} toggleIsAuthenticated={ toggleIsAuthenticated}></Nav>
-              <div className="auth">{
+          <Nav isAuthenticated={ isAuthenticated} toggleIsAuthenticated={ toggleIsAuthenticated}></Nav>
+          <div className="auth">{
                   currentForm === "login" ? <LoginForm onFormSwitch={toggleForm}/> :
                       currentForm === "logout" ? <Logoutform onFormSwitch={toggleForm}/> :
                           <RegisterForm onFormSwitch={toggleForm}/>
